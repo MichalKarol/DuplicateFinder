@@ -8,6 +8,9 @@ if( OpenSSL_FOUND )
     message(STATUS "Using OpenSSL ${OPENSSL_VERSION}")
 endif()
 
+find_package(Boost COMPONENTS program_options REQUIRED)
+include_directories(${Boost_INCLUDE_DIRS})
+
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++1z")
 
@@ -26,6 +29,7 @@ set_property(TARGET stdc++fs PROPERTY IMPORTED_LOCATION "/usr/lib/gcc/x86_64-lin
 
 add_executable(duplicateFinder main.cpp)
 target_link_libraries(duplicateFinder --coverage stdc++fs)
+target_link_libraries(duplicateFinder LINK_PUBLIC ${Boost_LIBRARIES})
 
 #enable_testing()
 #add_executable(tester tester.cpp)
