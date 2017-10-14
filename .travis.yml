@@ -7,10 +7,12 @@ compiler:
   - clang
 
 before_install:
+  - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
   - sudo apt-get update -qq
-
 install:
   - sudo apt-get install -qq libboost-program-options-dev
+  - sudo apt-get install -qq g++-7
+  - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-7 90
 
 addons:
   apt:
@@ -20,7 +22,8 @@ addons:
       - boost-latest
       - kalakris-cmake
     packages:
-     - g++-7
+     - libstdc++-6-dev
+     - g++-6
      - libboost-all-dev
      - libboost-program-options-dev
      - llvm-toolchain-3.6
