@@ -29,7 +29,6 @@ set_property(TARGET stdc++fs PROPERTY IMPORTED_LOCATION "/usr/lib/gcc/x86_64-lin
 
 add_executable(duplicateFinder main.cpp)
 target_link_libraries(duplicateFinder --coverage stdc++fs)
-target_link_libraries(duplicateFinder LINK_PUBLIC ${Boost_LIBRARIES})
 
 #enable_testing()
 #add_executable(tester tester.cpp)

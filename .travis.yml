@@ -1,4 +1,4 @@
-﻿dist: xenial
+﻿dist: trusty
 sudo: false
 language: cpp
 
@@ -37,6 +37,7 @@ addons:
      - clang-3-6
      - libboost-all-dev
      - libboost-program-options-dev
+     - llvm-toolchain-3.6
      - libssl1.0-dev
      - cmake
 
