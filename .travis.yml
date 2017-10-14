@@ -1,0 +1,28 @@
+﻿dist: trusty
+sudo: false
+language: cpp
+
+compiler:
+  - gcc
+  - clang
+
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+     - g++-7
+     - clang-8
+     - libboost-program-options-dev
+     - libssl1.0-dev
+
+script:
+  - cmake -D ENABLE_COVERAGE:BOOL=TRUE .
+  - cmake --build . -- -j2 
+
+notifications:
+  email:
+    recipients:
+      - michal.p.karol+travis@gmail.com
+     on_success: never
+     on_failure: always
