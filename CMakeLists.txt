@@ -8,8 +8,7 @@ if( OpenSSL_FOUND )
     message(STATUS "Using OpenSSL ${OPENSSL_VERSION}")
 endif()
 
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
+add_compile_options("-std=c++17")
 
 if (CMAKE_COMPILER_IS_GNUXX)
   option(ENABLE_COVERAGE "Enable coverage reporting for gcc/clang" FALSE)
