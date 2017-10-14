@@ -8,8 +8,6 @@ if( OpenSSL_FOUND )
     message(STATUS "Using OpenSSL ${OPENSSL_VERSION}")
 endif()
 
-add_compile_options("-std=c++17")
-
 if (CMAKE_COMPILER_IS_GNUXX)
   option(ENABLE_COVERAGE "Enable coverage reporting for gcc/clang" FALSE)
 
@@ -18,7 +16,7 @@ if (CMAKE_COMPILER_IS_GNUXX)
   endif()
 endif()
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wpedantic -lboost_program_options -lcrypto -lpthread -lstdc++fs")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wpedantic -lboost_program_options -lcrypto -lpthread -lstdc++fs -std=c++17")
 
 add_library(stdc++fs UNKNOWN IMPORTED)
 set_property(TARGET stdc++fs PROPERTY IMPORTED_LOCATION "/usr/lib/gcc/x86_64-linux-gnu/7/libstdc++fs.a")
