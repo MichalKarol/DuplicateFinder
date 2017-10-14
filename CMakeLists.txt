@@ -16,7 +16,7 @@ if (CMAKE_COMPILER_IS_GNUXX)
   endif()
 endif()
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wpedantic -lboost_program_options -lcrypto -lpthread -lstdc++fs -std=c++17")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wpedantic -lboost_program_options -lcrypto -lpthread -lstdc++fs -std=c++1z")
 
 add_library(stdc++fs UNKNOWN IMPORTED)
 set_property(TARGET stdc++fs PROPERTY IMPORTED_LOCATION "/usr/lib/gcc/x86_64-linux-gnu/7/libstdc++fs.a")
